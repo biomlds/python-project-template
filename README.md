@@ -1,4 +1,6 @@
 # Python project template
+## Forked from https://github.com/pamelafox/python-project-template
+---
 
 This is a template repository for any Python project that comes with the following dev tools:
 
