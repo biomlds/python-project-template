@@ -27,4 +27,4 @@ jobs:
           run: |
             pytest
         - name: Check missing docstrings with interrogate
-          run: interrogate --v .
+          run: interrogate -vv .
