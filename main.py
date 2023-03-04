@@ -1,4 +1,5 @@
 import argparse
+from os import listdir
 
 parser = argparse.ArgumentParser(description="Process some integers.")
 parser.add_argument("-a", type=int, help="an integer for the accumulator")
@@ -13,6 +14,15 @@ def add_numbers(alpha, beta):
 def multiply_numbers(alpha, beta):
     return alpha * beta
 
+
+def multiply_numbers_long(
+    alpha,
+    beta,
+):
+    return alpha * beta
+
+
+print(listdir())
 
 if __name__ == "__main__":
     print("add_numbers: ", add_numbers(args.a, args.b))

@@ -26,3 +26,5 @@ jobs:
         - name: Run unit tests
           run: |
             pytest
+        - name: Check missing docstrings with interrogate
+          run: interrogate --v .
