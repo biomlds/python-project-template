@@ -6,7 +6,7 @@ This is a template repository for any Python project that comes with the followi
 
 * `ruff`: identifies many errors and style issues (`flake8`, `isort`, `pyupgrade`)
 * `black`: auto-formats code
-* `interrogate`: checks docstrins coverage
+* `interrogate`: checks docstrings coverage
 
 Those checks are run as pre-commit hooks using the `pre-commit` library.
 
