@@ -9,8 +9,38 @@ repos:
     rev: v0.0.252
     hooks:
     -   id: ruff
+        args: [--fix]
 -   repo: https://github.com/psf/black
     rev: 23.1.0
     hooks:
     -   id: black
         args: ['--config=./pyproject.toml']
+-   repo: https://github.com/econchick/interrogate
+    rev: 1.4.0
+    hooks:
+    -   id: interrogate
+        pass_filenames: false
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 17a61c4
+    hooks:
+    -   id: mypy
+        args: [--no-strict-optional, --ignore-missing-imports, --pretty]
+
+
+# -   repo: https://github.com/ambv/black
+#     rev: 20.8b1
+#     hooks:
+#     - id: black
+# -   repo: https://gitlab.com/pycqa/flake8
+#     rev: 3.8.4
+#     hooks:
+#     - id: flake8
+# -   repo: https://github.com/timothycrosley/isort
+#     rev: 5.7.0
+#     hooks:
+#     -   id: isort
+# -   repo: https://github.com/econchick/interrogate
+#     rev: 1.4.0
+#     hooks:
+#     - id: interrogate
+#       args: [-vv, -i, --fail-under=80]
