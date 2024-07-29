@@ -3,7 +3,6 @@
 {
     "name": "Python 3",
     "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
-
     // Configure tool-specific properties.
     "customizations": {
         // Configure properties specific to VS Code.
@@ -13,13 +12,13 @@
                 "python.defaultInterpreterPath": "/usr/local/bin/python",
                 "python.testing.pytestEnabled": true,
                 "python.testing.unittestEnabled": false,
+                "editor.formatOnSave": true,
                 "files.exclude": {
                     ".coverage": true,
                     ".pytest_cache": true,
                     "__pycache__": true
                 }
             },
-
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "ms-python.python",
@@ -28,17 +27,13 @@
             ]
         }
     },
-
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// Fix for https://www.kenmuse.com/blog/avoiding-dubious-ownership-in-dev-containers/
-	"postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-
-	// Use 'postStartCommand' to run commands after the container is started (more frequently than create).
-	"postStartCommand": "pip3 install --user -r requirements-dev.txt && pre-commit install",
-
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // Fix for https://www.kenmuse.com/blog/avoiding-dubious-ownership-in-dev-containers/
+    "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    // Use 'postStartCommand' to run commands after the container is started (more frequently than create).
+    "postStartCommand": "pip3 install --user -r requirements-dev.txt && pre-commit install",
     // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "vscode"
 }

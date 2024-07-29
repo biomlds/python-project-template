@@ -9,9 +9,27 @@ line-length = 120
 target-version = ["py311"]
 
 [tool.pytest.ini_options]
-addopts = "-ra --cov"
+addopts = "-ra --cov=src --cov-fail-under=0"
 testpaths = ["tests"]
-pythonpath = ['.']
+pythonpath = ['src']
 
-[tool.coverage.report]
-show_missing = true
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = false
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-property-decorators = false
+ignore-module = true
+ignore-nested-functions = false
+ignore-nested-classes = true
+ignore-setters = false
+fail-under = 100
+exclude = ["tests", "setup.py", "docs", "build"]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
+verbose = 0
+quiet = false
+whitelist-regex = []
+
+
+[tool.mypy]

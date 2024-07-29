@@ -3,8 +3,12 @@ repos:
     rev: v4.5.0
     hooks:
     -   id: check-yaml
+    -   id: check-toml
+    -   id: name-tests-test
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
+    # -   id: no-commit-to-branch
+
 -   repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.1.0
     hooks:
@@ -13,3 +17,28 @@ repos:
     rev: 23.9.1
     hooks:
     -   id: black
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.0.1
+    hooks:
+    -   id: mypy
+        args: [--no-strict-optional, --ignore-missing-imports, --explicit-package-bases, --pretty]
+-   repo: https://github.com/econchick/interrogate
+    rev: 1.5.0  # Use the latest version available
+    hooks:
+    -   id: interrogate
+        name:  docstring coverage
+        entry: interrogate --config=pyproject.toml
+        language: python
+        files: ^src/
+        stages: [commit]
+
+-   repo: local
+    hooks:
+    -   id: test-coverage
+        name: test coverage
+        # entry: bash -c 'pytest --cov=src    --cov-fail-under=80'
+        entry: bash -c 'pytest --cov=src'
+        language: python
+        additional_dependencies: ['coverage', 'pytest', 'pytest-cov']
+        files: ^src/
+        stages: [commit]
