@@ -75,7 +75,3 @@ Here's a short explanation of each file/folder in this template:
 * `requirements.txt`: File listing all PyPi packages required for production
 
 For a longer explanation, read [this blog post](http://blog.pamelafox.org/2022/09/how-i-setup-python-project.html).
-
-# 🔎 Found an issue or have an idea for improvement?
-
-Help me make this template repository better by letting us know and opening an issue!
