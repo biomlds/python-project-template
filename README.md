@@ -4,10 +4,12 @@ This is a template repository for any Python project that comes with the followi
 
 * `ruff`: identifies many errors and style issues (`flake8`, `isort`, `pyupgrade`)
 * `black`: auto-formats code
+* `interrogate`: analyzes code tests coverage
+* `mypy`: type checks code
 
 Those checks are run as pre-commit hooks using the `pre-commit` library.
 
-It includes `pytest` for testing plus the `pytest-cov` plugin to measure coverage.
+It includes `pytest` for testing.
 
 The checks and tests are all run using Github actions on every pull request and merge to main.
 
@@ -42,14 +44,14 @@ pre-commit install
 
 ## Adding code and tests
 
-This repository starts with a very simple `main.py` and a test for it at `tests/main_test.py`.
+This repository starts with a very simple `src/main.py` and a test for it at `tests/main_test.py`.
 You'll want to replace that with your own code, and you'll probably want to add additional files
 as your code grows in complexity.
 
 When you're ready to run tests, run:
 
 ```
-python3 -m pytest
+`python3 -m pytest /src`
 ```
 
 # File breakdown
@@ -65,7 +67,8 @@ Here's a short explanation of each file/folder in this template:
   * `main_test.py`: File with pytest-style tests of main.py
 * `.gitignore`: File describing what file patterns Git should never track
 * `.pre-commit-config.yaml`: File listing all the pre-commit hooks and args
-* `main.py`: The main (and currently only) Python file for the program
+* `src`: Folder containing Python code
+  * `main.py`: The main (and currently only) Python file for the program
 * `pyproject.toml`: File configuring most of the Python dev tools
 * `README.md`: You're reading it!
 * `requirements-dev.txt`: File listing all PyPi packages required for development

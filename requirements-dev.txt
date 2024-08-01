@@ -3,5 +3,5 @@ pre-commit
 ruff
 black
 pytest
-coverage
+# coverage
 pytest-cov

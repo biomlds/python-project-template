@@ -39,6 +39,6 @@ repos:
         # entry: bash -c 'pytest --cov=src    --cov-fail-under=80'
         entry: bash -c 'pytest --cov=src'
         language: python
-        additional_dependencies: ['coverage', 'pytest', 'pytest-cov']
+        # additional_dependencies: ['coverage', 'pytest', 'pytest-cov']
         files: ^src/
         stages: [commit]
