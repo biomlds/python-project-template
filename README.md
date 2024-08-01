@@ -51,7 +51,7 @@ as your code grows in complexity.
 When you're ready to run tests, run:
 
 ```
-`python3 -m pytest ./src`
+python3 -m pytest ./src
 ```
 
 # File breakdown
